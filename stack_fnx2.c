@@ -34,8 +34,12 @@ void add(stack_t **head)
  */
 void swap(stack_t **head)
 {
-	if (*head)
-		print("Not Implemented yet");
+	stack_t *temp;
+
+	temp = (*head)->next;
+	(*head)->next = temp->next;
+	temp->next = *head;
+	*head = temp;
 }
 
 /**
