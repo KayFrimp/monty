@@ -71,6 +71,6 @@ void op_swap(stack_t **stack, unsigned int line_number);
 void op_nop(stack_t **stack, unsigned int line_number);
 
 /* get_op_function.c */
-void (*get_op_function(char *cmd))(stack_t **, unsigned int);
+void (*get_op_function(char *cmd, unsigned int ln))(stack_t **, unsigned int);
 
 #endif /* MONTY_H */

@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		line_number++;
 		cmd = strtok(line, " \n\t");
 		extern_param = strtok(NULL, " \n\t");
-		func = get_op_function(cmd);
+		func = get_op_function(cmd, line_number);
 		func(&head, line_number);
 	}
 	free(line);

@@ -3,10 +3,10 @@
 /**
  * get_op_function - get the operation function to be executed
  * @cmd: operation command
- *
+ * @ln: line number
  * Return: function for operation
  */
-void (*get_op_function(char *cmd))(stack_t **, unsigned int)
+void (*get_op_function(char *cmd, unsigned int ln))(stack_t **, unsigned int)
 {
 	instruction_t operations[] = {
 		{"push", op_push},
@@ -15,17 +15,20 @@ void (*get_op_function(char *cmd))(stack_t **, unsigned int)
 		{"pint", op_pint},
 		{"swap", op_swap},
 		{"add", op_add},
-		{"nop", op_nop},
-		{NULL, op_nop}
+		{"nop", op_nop}
 	};
 	int i = 0;
 
-	for ( ; i < 8; i++)
+	for ( ; i < 7; i++)
 	{
 		if (cmd == NULL)
-			return (operations[7].f);
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", ln, cmd);
+			exit(EXIT_FAILURE);
+		}
 		if (strcmp(operations[i].opcode, cmd) == 0)
 			return (operations[i].f);
 	}
-	return (operations[7].f);
+	fprintf(stderr, "L%d: unknown instruction %s\n", ln, cmd);
+	exit(EXIT_FAILURE);
 }
