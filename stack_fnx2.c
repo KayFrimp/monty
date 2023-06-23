@@ -19,8 +19,12 @@ void pall(stack_t **head)
  */
 void add(stack_t **head)
 {
-	if (*head)
-		printf("Add function not yet implemented\n");
+	stack_t *temp;
+
+	temp = *head;
+	((*head)->next)->n = ((*head)->next)->n + (*head)->n;
+	*head = (*head)->next;
+	free(temp);
 }
 
 /**
@@ -31,7 +35,7 @@ void add(stack_t **head)
 void swap(stack_t **head)
 {
 	if (*head)
-		printf("swap function not yet implemented\n");
+		print("Not Implemented yet");
 }
 
 /**
