@@ -22,9 +22,9 @@ extern char *extern_param;
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -37,8 +37,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 
@@ -53,22 +53,36 @@ int pop(stack_t **head);
 /* stack_fnx2.c */
 void pall(stack_t **head);
 void free_stack(stack_t **head);
-void add(stack_t **head);
+void _add(stack_t **head);
 void swap(stack_t **head);
-void nop(stack_t **head);
+void _sub(stack_t **head);
 
+/* stack_fnx3.c */
+void _mul(stack_t **head);
+void _div(stack_t **head);
+void _mod(stack_t **head);
+void pchar(stack_t **head);
+void pstr(stack_t **head);
+
+/* more_opcode_functions.c */
+void op_add(stack_t **stack, unsigned int line_number);
+void op_nop(stack_t **stack, unsigned int line_number);
+void op_sub(stack_t **stack, unsigned int line_number);
+void op_div(stack_t **stack, unsigned int line_number);
+void op_mod(stack_t **stack, unsigned int line_number);
 
 /* op_functions.c */
 void op_push(stack_t **stack, unsigned int line_number);
 void op_pop(stack_t **stack, unsigned int line_number);
 void op_pint(stack_t **stack, unsigned int line_number);
 void op_pall(stack_t **stack, unsigned int line_number);
-void op_add(stack_t **stack, unsigned int line_number);
+void op_swap(stack_t **stack, unsigned int line_number);
 
 
 /* op_functions2.c */
-void op_swap(stack_t **stack, unsigned int line_number);
-void op_nop(stack_t **stack, unsigned int line_number);
+void op_mul(stack_t **stack, unsigned int line_number);
+void op_pchar(stack_t **stack, unsigned int line_number);
+void op_pstr(stack_t **stack, unsigned int line_number);
 
 /* get_op_function.c */
 void (*get_op_function(char *cmd, unsigned int ln))(stack_t **, unsigned int);
