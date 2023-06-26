@@ -47,3 +47,25 @@ void op_pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	pstr(stack);
 }
+
+/**
+ * op_rotl - rotates the stack to the top
+ * @stack: pointer to the head of the stack
+ * @line_number: operation line number
+ *
+ */
+void op_rotl(stack_t **stack, unsigned int line_number __attribute__((unused)))
+{
+	rotl(stack);
+}
+
+/**
+ * op_rotr - rotates the stack to the bottom
+ * @stack: pointer to the head of the stack
+ * @line_number: operation line number
+ *
+ */
+void op_rotr(stack_t **stack, unsigned int line_number __attribute__((unused)))
+{
+	rotr(stack);
+}

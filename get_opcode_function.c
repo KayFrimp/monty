@@ -1,4 +1,5 @@
 #include"monty.h"
+
 /**
  * get_op_function - get the operation function to be executed
  * @cmd: operation command
@@ -21,15 +22,15 @@ void (*get_op_function(char *cmd, unsigned int ln))(stack_t **, unsigned int)
 		{"#", op_nop},
 		{"nop", op_nop},
 		{"pchar", op_pchar},
-		{"pstr", op_pstr}
-		/*{"rotl", op_rotl},*/
-		/*{"rotr", op_rotr},*/
+		{"pstr", op_pstr},
+		{"rotl", op_rotl},
+		{"rotr", op_rotr}
 		/*{"stack", op_stack},*/
 		/*{"queue", op_queue}*/
 	};
-	int i = 0;
+	int i;
 
-	for ( ; i < 14; i++)
+	for (i = 0; i < 16; i++)
 	{
 		if (cmd == NULL)
 			break;
