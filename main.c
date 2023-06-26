@@ -30,8 +30,11 @@ int main(int argc, char **argv)
 		line_number++;
 		cmd = strtok(line, " \n\t");
 		extern_param = strtok(NULL, " \n\t");
-		func = get_op_function(cmd, line_number);
-		func(&head, line_number);
+		if (cmd != NULL && cmd[0] != '#')
+		{
+			func = get_op_function(cmd, line_number);
+			func(&head, line_number);
+		}
 	}
 	free(line);
 	free_stack(&head);

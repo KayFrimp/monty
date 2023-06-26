@@ -43,7 +43,7 @@ void op_pchar(stack_t **stack, unsigned int line_number)
  * @line_number: operation line number
  *
  */
-void op_pstr(stack_t **stack, unsigned int line_number)
+void op_pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	pstr(stack);
 }

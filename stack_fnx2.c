@@ -13,11 +13,11 @@ void pall(stack_t **head)
 }
 
 /**
- * add - Add the top two elements of the stack
+ * _add - Add the top two elements of the stack
  * @head: pointer to head node
  *
  */
-void add(stack_t **head)
+void _add(stack_t **head)
 {
 	stack_t *temp;
 
@@ -58,4 +58,19 @@ void free_stack(stack_t **head)
 		free(temp);
 		temp = next;
 	}
+}
+
+/**
+ * _sub - Subtracts the top element from the next element of the stack.
+ * @head: pointer to head node
+ *
+ */
+void _sub(stack_t **head)
+{
+	stack_t *temp;
+
+	temp = *head;
+	((*head)->next)->n = ((*head)->next)->n - (*head)->n;
+	*head = (*head)->next;
+	free(temp);
 }

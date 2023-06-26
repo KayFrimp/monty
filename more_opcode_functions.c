@@ -8,12 +8,12 @@
  */
 void op_add(stack_t **stack, unsigned int line_number)
 {
-        if (stack_size(stack) < 2)
-        {
-                fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-        _add(stack);
+	if (stack_size(stack) < 2)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	_add(stack);
 }
 
 /**
@@ -23,7 +23,7 @@ void op_add(stack_t **stack, unsigned int line_number)
  *
  */
 void op_nop(stack_t **stack __attribute__((unused)),
-                unsigned int line_number __attribute__((unused)))
+		unsigned int line_number __attribute__((unused)))
 {
 }
 
@@ -35,12 +35,12 @@ void op_nop(stack_t **stack __attribute__((unused)),
  */
 void op_sub(stack_t **stack, unsigned int line_number)
 {
-        if (stack_size(stack) < 2)
-        {
-                fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-        _sub(stack);
+	if (stack_size(stack) < 2)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	_sub(stack);
 }
 
 /**
@@ -51,17 +51,17 @@ void op_sub(stack_t **stack, unsigned int line_number)
  */
 void op_div(stack_t **stack, unsigned int line_number)
 {
-        if (stack_size(stack) < 2)
-        {
-                fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-        if (top(stack) == 0)
-        {
-                fprintf(stderr, "L%d: division by zero\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-        _div(stack);
+	if (stack_size(stack) < 2)
+	{
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (top(stack) == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	_div(stack);
 }
 
 /**
@@ -72,15 +72,15 @@ void op_div(stack_t **stack, unsigned int line_number)
  */
 void op_mod(stack_t **stack, unsigned int line_number)
 {
-        if (stack_size(stack) < 2)
-        {
-                fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-        if (top(stack) == 0)
-        {
-                fprintf(stderr, "L%d: division by zero\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-        _mod(stack);
+	if (stack_size(stack) < 2)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (top(stack) == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+	exit(EXIT_FAILURE);
+	}
+	_mod(stack);
 }
